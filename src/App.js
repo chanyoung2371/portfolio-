@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react'
+// import { useState } from 'react'
+import './App.css'
+import {BrowserRouter, Route, Routes } from 'react-router-dom';
+import Mui from './Route/Mui'
+import Todo from './Route/Todo'
+import List from './Component/List'
+import Count from './Route/Count'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+      <List/>
+          <Routes>
+            <Route path='/mui' element ={<Mui />}/>
+            <Route path='/todo' element ={<Todo />}/>
+            <Route path='/count' element ={<Count />}/>
+          </Routes>
+          </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
